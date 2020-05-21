@@ -30,34 +30,35 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
-|username|string|null: false|
+|name|string|null: false|
 ### Association
 - has_many :comments
-- has_many :group
+- has_many :groups
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|title|text|null: false|
-|text|text|null: false|
+|image|text|
+|text|text|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to: users
-- has_many: comments
+- belongs_to: user
+- has_many: groups
 
-## groupテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false|
 |group_id|integer|null: false|
 ### Association
 - belongs_to: user
+- has_many: groups
 
-## tagsテーブル
+## autholizationテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_id|integer|null: false, foreign_key: true|
-|tag_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :users
-- has_many :group
+- has_many :groups
