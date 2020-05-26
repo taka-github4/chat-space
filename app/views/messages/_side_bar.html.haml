@@ -5,15 +5,17 @@
         = current_user.name
       .side__user__name-icon__icon
         .side__user__name-icon__icon__left
-          = link_to "#" ,class: "btn" do
-            = icon('far', 'edit')
+          = link_to new_group_path do
+            = icon('far', 'edit',class: 'btn')
           
         .side__user__name-icon__icon__right
           = link_to edit_user_path(current_user) do
             = icon('fa', 'cog', class: 'btn2')
   .side__group
-    .side__group__box
-      .side__group__box__top
-        %p a
-      .side__group__box__under
-        %p まだメッセージがありません
+    - current_user.groups.each do |group|
+      .side__group__box
+        = link_to '#', class: "side__group__box__content" do
+          .side__group__box__content__top
+            = group.name
+          .side__group__box__content__under
+            メッセージはまだありません。
