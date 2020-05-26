@@ -2,16 +2,15 @@
   .side__user
     .side__user__name-icon
       .side__user__name-icon__name
-        %p masa
+        = current_user.name
       .side__user__name-icon__icon
         .side__user__name-icon__icon__left
           = link_to "#" ,class: "btn" do
             = icon('far', 'edit')
           
         .side__user__name-icon__icon__right
-          = link_to "#" ,class: "btn2" do
-            = icon('fa', 'cog')
-          
+          = link_to edit_user_path(current_user) do
+            = icon('fa', 'cog', class: 'btn2')
   .side__group
     .side__group__box
       .side__group__box__top
