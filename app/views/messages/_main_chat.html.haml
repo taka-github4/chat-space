@@ -1,0 +1,32 @@
+.main
+  .main__group
+    .main__group__boxleft
+      .main__group__boxleft__texttop
+        aaa
+      .main__group__boxleft__textunder
+        Member：fafafafafa
+    .main__group__boxright
+      = link_to "#",class: "btn-default" do
+        Edit
+  .main__comment
+    .main__comment__box
+      .main__comment__box__top
+        .main__comment__box__top__left
+          fafafafafa
+        .main__comment__box__top__right
+          2020/05/25(Mon) 19:32:38
+      .main__comment__box__under
+        a
+
+  .main__bottom
+    .main__bottom__chat
+      .main__bottom__chat__text
+        .main__bottom__chat__text__left
+        .main__bottom__chat__text__icon
+          %label{class: "image"}
+            = icon('fas', 'image')
+            %input{type: "file",class: "file"}
+      .main__bottom__chat__send
+        %button{type:"submit",class: "sendbtn"}
+        Send
+    
