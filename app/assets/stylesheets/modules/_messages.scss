@@ -142,7 +142,9 @@
     height: 90px;
     padding:20px 40px;
     &__chat{
-      display:flex;
+      .new_message{
+        display:flex;
+      }
       &__text{
         position:relative;
         width:100%;
@@ -173,9 +175,6 @@
         background-color:#38aef0;
         color:white;
         cursor:pointer;
-        .sendbtn{
-          display:none;
-        }
       }
     }    
   }
